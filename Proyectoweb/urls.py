@@ -1,0 +1,34 @@
+"""Proyectoweb URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+
+#from ProyectowebApp import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('ProyectowebApp.urls')),
+    path('servicios/', include('servicios.urls')),
+    path('blog/', include('blog.urls')),
+    path('contacto/', include('contacto.urls')),
+    path('tienda/', include('tienda.urls')),
+    #path('',views.home, name="Home"),
+    #path('servicios',views.servicios, name="Servicios"),
+    #path('tienda',views.tienda, name="Tienda"),
+    #path('contacto',views.contacto, name="Contacto"),
+]
+
+# Cuando se tenga mas de una app se sigue estos pasos
